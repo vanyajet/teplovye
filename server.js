@@ -6,7 +6,7 @@ const morgan = require('morgan')
 const path = require('path')
 
 const normalizePort = (port) => parseInt(port, 10)
-const PORT = normalizePort(443)
+const PORT = normalizePort(3000)
 
 const app = express()
 
@@ -22,7 +22,7 @@ app.get('*', (req, res) => {
 
 const server = createServer(app)
 
-server.listen(PORT, (err) => {
+server.listen(process.env.PORT || PORT, (err) => {
     if(err) throw err
 
     console.log(`server listening on port ${PORT}`)
