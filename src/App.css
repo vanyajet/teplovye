@@ -214,6 +214,8 @@ a {
   justify-content: space-between;
   align-items: center;
   border-radius: inherit;
+  object-fit: contain;
+  height: 100%;
 }
 .next,
 .prev {
@@ -290,7 +292,8 @@ a {
 }
 
 .imggallery {
-  height: fit-content;
+  height: 100%;
+  object-fit: contain;
 }
 
 .overlay {
