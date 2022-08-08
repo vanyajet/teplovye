@@ -28,7 +28,7 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
           className="single-product-card"
           onClick={e => e.stopPropagation()}
           style={{ backgroundColor: '#a9a9a9' }}
-          dragSnapToOrigin={true}
+          dragSnapToOrigin={false}
         >
             {window.innerWidth > 768 ? null :
             <Button onClick={close} style={{position: 'absolute', top: '2%', right: '0', zIndex: '3', color: '#343434'}} >
