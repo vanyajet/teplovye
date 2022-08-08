@@ -8,7 +8,7 @@ import { productData } from "../../data/productData";
 import Footer from "../navigation/Footer";
 
 const Products:FC = () => {
-  
+
   const [index, setIndex] = useState<string|null>(null);
   
   return (

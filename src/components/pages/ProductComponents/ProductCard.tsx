@@ -12,7 +12,7 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
 
     const { id, title, subTitle, price, img, contentText, category, bju } = product!
 
-    const swipeConfidenceThreshold = 10000;
+    const swipeConfidenceThreshold = 40000;
   
     return (
       <div className="product-card-container" >
@@ -28,7 +28,6 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
           className="single-product-card"
           dragPropagation={true}
           onClick={e => e.stopPropagation()}
-          dragElastic={0.1}
           style={{ backgroundColor: '#a9a9a9'}}
           dragConstraints={{ bottom: 200, top: -220 }}
           dragSnapToOrigin={false}
