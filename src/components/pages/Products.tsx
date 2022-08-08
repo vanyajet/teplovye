@@ -4,10 +4,11 @@ import { Container } from "@mui/material";
 import ProductGallery from "./ProductComponents/ProductGallery";
 import ProductCard from "./ProductComponents/ProductCard";
 import { Header } from "./ProductComponents/Header";
-import { productCardData } from "../../data/productCardData";
+import { productData } from "../../data/productData";
 import Footer from "../navigation/Footer";
 
 const Products:FC = () => {
+  
   const [index, setIndex] = useState<string|null>(null);
   
   return (
@@ -15,7 +16,7 @@ const Products:FC = () => {
     <Header />
     <Container style={{display: 'flex', paddingLeft: 0, paddingRight: 0}}>
       <>
-      <ProductGallery items={productCardData} setIndex={setIndex} index={index} />
+      <ProductGallery items={productData} setIndex={setIndex} index={index} />
       <AnimatePresence>
         {index !== null && (
           <motion.div
@@ -29,7 +30,7 @@ const Products:FC = () => {
       </AnimatePresence>
 
         {index !== null && (
-          <ProductCard index={index} setIndex={setIndex} product={productCardData.find(item => item.id === index)} />
+          <ProductCard index={index} setIndex={setIndex} product={productData.find(item => item.id === index)} />
         )}
 
       </>

@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 import FlipCard from '../animations/FlipCard'
 import Trail from '../animations/Trail'
 import CallButton from '../animations/CallButton'
+import { Typography } from '@mui/material'
 
 
 const url = (name: string, wrap = false) =>
@@ -93,9 +94,9 @@ const Home:FC = () => {
           }}
         />
 
-        <ParallaxLayer offset={0.95} speed={0.2}>
+        <ParallaxLayer offset={0.99} speed={0.2}>
           <div className='grey_text_left'>
-            <p>Мы готовы поставлять свежие овощи круглый год, а также производить необходимые объемы продукции индивидуально для Вас (вашей компании?)</p>
+            <Typography variant={`${window.innerWidth > 1024 ? 'h3' : 'h5'}`}>Мы готовы поставлять свежие овощи круглый год, а также производить необходимые объемы продукции индивидуально для Вас (вашей компании?)</Typography>
           </div>
         </ParallaxLayer>
 
@@ -106,14 +107,14 @@ const Home:FC = () => {
             display: 'flex',
             alignItems: 'start',
             justifyContent: 'center',
-            marginTop: '5%',
+            marginTop: '6rem',
           }}>
 
           {/* <div onClick={() => set(state => !state)} style={{ marginLeft: '3%', marginTop: '45%' }}>           
             <FlipCard flipped={flipped} back='img/tomato_farm_close.jpg' front='img/tomato_farm.jpg' shadow='dark'/>
           </div> */}
           
-          <div className='spring_container' style={{ alignItems: 'start', marginTop: '5%' }} >
+          <div className='spring_container' style={{ alignItems: 'start', marginTop: `${window.innerWidth > 768 ? '6rem' : '2rem'}` }} >
           
             <Trail open={true}>
               <span>Мы</span>
@@ -150,32 +151,33 @@ const Home:FC = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={window.innerWidth > 600 ? 0.5 : 0.25} speed={0.2}>
-          <div style={{ marginLeft: '3%' }}>           
+          <div style={{ marginLeft: `${window.innerWidth > 600 ? '3%' : '0%'}`, marginTop: `${window.innerWidth > 768 ? '0' : '3rem'}`, fontSize: `${window.innerWidth > 430 ? '1rem' : '0.85rem'}` }}>           
             <FlipCard
-              back='Наша продукция - самый высокий стандарт по соотношению цена - качество. Каждый плод выращеный в теплицах чистый и экологичный, а за счет валового сбора удаётся сдерживать цены на продукцию, поэтому она пользуется спросом.'
+              back='ООО «Тепличный» — лидер в Поволжье по круглогодичному выращиванию овощей. Общая площадь теплиц — 16 га, более 200 сотрудников и за год здесь собирают более 6 млн кг овощей. Основные направления — производство огурцов и томатов. Кроме того, здесь выращивают грибы, редис, салат, зеленые культуры, производится мед различных сортов.'
               front='img/products2.jpg'
+              initial='flipped'
               shadow='bright'/>
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={window.innerWidth > 600 ? 0.7 : 0.62} speed={0.3} >
-          <div style={{ marginLeft: `${window.innerWidth > 600 ? '60%' : '0%'}` }}>           
+          <div style={{ marginLeft: `${window.innerWidth > 600 ? '60%' : '0%'}`, marginTop: `${window.innerWidth > 768 ? '0' : '1rem'}`, fontSize: `${window.innerWidth > 430 ? '1rem' : '0.85rem'}` }}>           
           <FlipCard
-            back='ООО «Тепличный» — лидер в Поволжье по круглогодичному выращиванию овощей. Общая площадь теплиц — 16 га, более 200 сотрудников и за год здесь собирают более 6 млн кг овощей. Основные направления — производство огурцов и томатов. Кроме того, здесь выращивают грибы, редис, салат, зеленые культуры, производится мед различных сортов.'
+            back='Наша продукция - самый высокий стандарт по соотношению цена - качество. Каждый плод выращеный в теплицах чистый и экологичный, а за счет валового сбора удаётся сдерживать цены на продукцию, поэтому она пользуется спросом.'
             front='img/tomato_farm.jpg'
-            initial='flipped'
+
             shadow='bright'/>
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.2} speed={0.5}>
+        <ParallaxLayer offset={1.7} speed={0.5}>
           <div className='grey_text_right'>
-            <p>Нам доверяют такие крупные предприятия как <a href='https://dodopizza.ru/samara/about' target="_blank" rel="noopener noreferrer" style={{ color: '#ff6900', cursor: 'pointer',}}>Додо Пицца</a> и еще кто нибудь</p>
+            <Typography variant={`${window.innerWidth > 1024 ? 'h3' : 'h5'}`}>Нам доверяют такие крупные предприятия как <a href='https://dodopizza.ru/samara/about' target="_blank" rel="noopener noreferrer" style={{ color: '#ff6900', cursor: 'pointer',}}>Додо Пицца</a> и еще кто нибудь</Typography>
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.9} speed={0.8}>
-          <div style={{ marginLeft: `${window.innerWidth > 600 ? '50%' : '30%'}`, marginTop: '30%' }}>           
+          <div style={{ marginLeft: `${window.innerWidth > 600 ? '50%' : '0'}`, marginTop: '25%' }}>           
             <FlipCard
               back='Свяжитесь с нашим менеджером и оставьте заявку, мы обработаем Ваш заказ и доставим необходимые объемы продукции в указанные сроки'
               front='img/mushroom.jpg'

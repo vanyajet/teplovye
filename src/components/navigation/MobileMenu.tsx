@@ -10,6 +10,8 @@ import InfoIcon from '@mui/icons-material/Info';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import YardIcon from '@mui/icons-material/Yard';
 import { Link } from 'react-router-dom';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -49,6 +51,7 @@ const StyledMenu = styled((props: MenuProps) => (
 }));
 
 const MobileMenu:React.FC = () => {
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -111,6 +114,14 @@ const MobileMenu:React.FC = () => {
         </MenuItem>
 
       </StyledMenu>
+
+      <Button
+        component={Link}
+        to='/cart'
+        style={{marginRight: '1rem', marginTop: '1rem', marginBottom: '1rem', fontWeight: 'bold', backgroundColor: '#7BB32E', color: '#000'}}
+      >
+        <ShoppingCartCheckoutIcon />
+      </Button>
     </div>
   );
 }

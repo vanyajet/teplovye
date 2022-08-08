@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import YardIcon from '@mui/icons-material/Yard';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import { Button } from '@mui/material';
 
 const DesktopMenu:FC = () => {
     
@@ -16,8 +18,8 @@ const DesktopMenu:FC = () => {
     };
 
     return (
+      <>
         <Tabs 
-        
           onChange={handleChange} 
           aria-label="nav tabs example"
           textColor="inherit"
@@ -55,8 +57,17 @@ const DesktopMenu:FC = () => {
             to='/contacts'
             color='primary'
           />
+          <Button
+            component={Link}
+            to='/cart'
+            style={{marginRight: '1rem', marginTop: '1rem', marginBottom: '1rem', fontWeight: 'bold', backgroundColor: '#7BB32E', color: '#000'}}
+          >
+            <ShoppingCartCheckoutIcon />
+          </Button>
         
       </Tabs>
+      
+    </>
   )
 }
 

@@ -12,7 +12,7 @@ const NavBar:FC = () => {
     <Box sx={{ width: '100%', display:'flex', justifyContent:'space-between', bgcolor: '#075921', color:'#ffffff', fontWeight: 'bold', alignItems: 'center', position: 'fixed', overflow: 'hidden', zIndex: 100, top: 0 }}>
       <img src='img/tomato.svg' className='mobile-logo' alt='Тепловье'/>
       <img src='img/logo.png' className='desktop-logo' alt='Тепловье'/>
-      {window.innerWidth > 600 ? <DesktopMenu /> : <MobileMenu />}
+      {window.innerWidth > 768 ? <DesktopMenu /> : <MobileMenu />}
       
     </Box>
 
