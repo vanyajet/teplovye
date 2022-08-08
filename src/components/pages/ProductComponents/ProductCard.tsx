@@ -18,17 +18,19 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
       <div className="product-card-container" >
         <motion.div
           layoutId={index}
-          drag
+          drag='y'
           onDragEnd={(e, { offset, velocity }) => {
             const swipe = swipePower(offset.y, velocity.y);           
-            if (swipe > swipeConfidenceThreshold) {
+            if (Math.abs(swipe) > swipeConfidenceThreshold) {
               close()
             } else return null
           }}
           className="single-product-card"
+          dragPropagation={true}
           onClick={e => e.stopPropagation()}
+          dragElastic={0.1}
           style={{ backgroundColor: '#a9a9a9'}}
-          dragConstraints={{ bottom: 200, top: -150, left:0, right:0 }}
+          dragConstraints={{ bottom: 200, top: -220 }}
           dragSnapToOrigin={false}
         >
             {window.innerWidth > 768 ? null :
