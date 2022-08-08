@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { motion } from "framer-motion";
-import { Box, Button, Divider, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import ImageGallery, { swipePower } from "../../animations/ImageGallery";
 import CloseIcon from '@mui/icons-material/Close';
 import { IProductData } from "../../../data/productData";
@@ -18,7 +18,7 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
       <div className="product-card-container" >
         <motion.div
           layoutId={index}
-          drag="y"
+          drag
           onDragEnd={(e, { offset, velocity }) => {
             const swipe = swipePower(offset.y, velocity.y);           
             if (swipe > swipeConfidenceThreshold) {
@@ -27,7 +27,8 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
           }}
           className="single-product-card"
           onClick={e => e.stopPropagation()}
-          style={{ backgroundColor: '#a9a9a9' }}
+          style={{ backgroundColor: '#a9a9a9'}}
+          dragConstraints={{ bottom: 200, top: -150, left:0, right:0 }}
           dragSnapToOrigin={false}
         >
             {window.innerWidth > 768 ? null :

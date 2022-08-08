@@ -24,7 +24,7 @@ const Contacts:FC = () => {
             Нам доверяют десятки тысяч людей по всему городу, посетите один из наших магазинов и убедитесь в свежести и высоких вкусовых качествах наших продуктов!
             <span role="img" aria-label="Love">❤️</span>
           </Typography>
-          <Grid container spacing={4} style={{display: 'flex', justifyContent: 'space-between', margin: '0 0 1rem 0', width: 'auto'}}>
+          <Grid container spacing={4} style={{display: 'flex', justifyContent: 'space-between', width: 'auto'}}>
 
             {shopData.map((item:IShopData) => (
               <Grid item sm={12} md={5.5} lg={5.5} style={{ marginLeft: '0.5rem', marginRight: '0.5rem', marginBottom: '0.5rem', marginTop: '0.5rem'}}>
