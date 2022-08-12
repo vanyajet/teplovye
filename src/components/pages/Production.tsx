@@ -22,21 +22,26 @@ const Production:FC = () => {
             <FlipCard 
                 back='ООО «Тепличный» — крупнейшее тепличное хозяйство в Поволжье, производящее круглый год овощную продукцию.'
                 front='img/tomato_farm_close1.jpg'
-                shadow='bright'/>
+                shadow='bright'
+                
+                />
             </div>
 
             <div className="production-item">
             <FlipCard
                 back='Общая площадь теплиц — 16 га, более 200 сотрудников и за год здесь собирают более 6 млн кг овощей.'
                 front='img/vertical_tomato_yellow.jpg'
-                shadow='bright'/>
+                shadow='bright'
+                flipTime={4500}
+                />
             </div>
 
             <div className="production-item">
             <FlipCard
                 back='Основные направления — производство огурцов и томатов. Кроме того, здесь выращивают грибы, редис, салат, зеленые культуры, производится мед различных сортов.'
                 front='img/vertical_products.jpg'
-                initial='flipped'
+                flipTime={3000}
+                
                 shadow='bright'/>
             </div>
 
@@ -51,8 +56,10 @@ const Production:FC = () => {
             <FlipCard
                 back='В наших теплицах используются около 3000 ламп по 600 ватт каждая, и это позволяет нам собирать урожай круглый год. Каждый год жители Самары и области получают экологически чистые и вкусные овощи.'
                 front='img/cucumber_farm.jpg'
-                initial='flipped'
-                shadow='bright'/>
+                flipTime={4500}
+                shadow='bright'
+                
+                />
             </div>
 
             <div className="production-item">
@@ -66,7 +73,8 @@ const Production:FC = () => {
             <FlipCard
                 back='Мы применяем технологию «светокультура». Это голландско-израильская технология, но оборудование и программное обеспечение полностью отечественные.'
                 front='img/vertical_salad_farm.jpg'
-                initial='flipped'
+                flipTime={3000}
+                
                 shadow='bright'/>
             </div>
 
@@ -81,7 +89,7 @@ const Production:FC = () => {
             <FlipCard
                 back='Энергоресурсы очень дорогие, но за счёт валового сбора удаётся сдерживать цены на продукцию, поэтому она пользуется спросом'
                 front='img/vertical_products_1.jpg'
-                initial='flipped'
+                flipTime={3000}
                 shadow='bright'/>
             </div>
 
@@ -96,7 +104,7 @@ const Production:FC = () => {
             <FlipCard
                 back='Мы используем голландских и израильских шмелей. Они качественно опыляют культуры огурца и томата. Есть и своя пасека пчёл для опыления огурца.'
                 front='img/vertical_honey.jpg'
-                initial='flipped'
+                flipTime={3000}
                 shadow='bright'/>
             </div>
 

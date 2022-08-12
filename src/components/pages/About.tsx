@@ -25,7 +25,7 @@ const Home:FC = () => {
         
 
         <ParallaxLayer offset={1.3} speed={0.4} style={{ opacity: 0.6 }}>
-          <img src='img/mushroom.svg' alt='Грибы Тепловье' style={{ display: 'block', width: '10%', marginLeft: '5%', marginTop: '35%' }} />
+          <img src='img/svg/mushroom.svg' alt='Грибы Тепловье' style={{ display: 'block', width: '10%', marginLeft: '5%', marginTop: '35%' }} />
           
         </ParallaxLayer>
 
@@ -36,7 +36,7 @@ const Home:FC = () => {
         
         
         <ParallaxLayer offset={0.8} speed={-0.1} style={{ opacity: 0.4 }}> 
-          <img src='img/salad.svg' alt='Салат Тепловье' style={{ display: 'block', width: '25%', marginLeft: '70%' }} />
+          <img src='img/svg/salad.svg' alt='Салат Тепловье' style={{ display: 'block', width: '25%', marginLeft: '70%' }} />
           
         </ParallaxLayer>
 
@@ -45,7 +45,7 @@ const Home:FC = () => {
           speed={0}
           factor={3}
           style={{
-            backgroundImage: 'img/greenCover.svg',
+            backgroundImage: 'img/svg/greenCover.svg',
             backgroundSize: 'cover',
           }}
         />
@@ -57,17 +57,17 @@ const Home:FC = () => {
         </ParallaxLayer> */}
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-          <img src='img/tomato.svg' alt='Томат Тепловье' style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-          <img src='img/tomato1.svg' alt='Томат Тепловье' style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
+          <img src='img/svg/tomato.svg' alt='Томат Тепловье' style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
+          <img src='img/svg/tomato1.svg' alt='Томат Тепловье' style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-          <img src='img/tomato2.svg' alt='Томат Тепловье' style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
+          <img src='img/svg/tomato2.svg' alt='Томат Тепловье' style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-          <img src='img/cucumber.svg' alt='Огурец Тепловье' style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-          <img src='img/tomato4.svg' alt='Томат Тепловье' style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+          <img src='img/svg/cucumber.svg' alt='Огурец Тепловье' style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+          <img src='img/svg/tomato4.svg' alt='Томат Тепловье' style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
         
@@ -90,7 +90,7 @@ const Home:FC = () => {
           style={{
             backgroundSize: '80%',
             backgroundPosition: 'center',
-            backgroundImage: 'img/restaurantTable.svg',
+            backgroundImage: 'img/svg/restaurantTable.svg',
           }}
         />
 
@@ -123,7 +123,7 @@ const Home:FC = () => {
             </Trail>
           </div>
 
-          <img src='img/shop.svg' alt='Магазин Тепловье' style={{ width: '30%' }} />
+          <img src='img/svg/shop.svg' alt='Магазин Тепловье' style={{ width: '30%' }} />
 
         </ParallaxLayer>
 
@@ -135,7 +135,7 @@ const Home:FC = () => {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <img src='img/restaurantFork.svg' alt='Поставки в Ресторан' style={{ width: '40%' }} />
+          <img src='img/svg/restaurantFork.svg' alt='Поставки в Ресторан' style={{ width: '40%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -147,7 +147,7 @@ const Home:FC = () => {
             justifyContent: 'center',
           }}
           >
-          <img src='img/restaurantTable.svg' alt='Поставки в Ресторан' style={{ width: '40%' }} />
+          <img src='img/svg/restaurantTable.svg' alt='Поставки в Ресторан' style={{ width: '40%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={window.innerWidth > 600 ? 0.5 : 0.25} speed={0.2}>

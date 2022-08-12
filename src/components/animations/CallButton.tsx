@@ -43,9 +43,8 @@ const CallButton:FC<{ shortPhone:string, title:string, sizing:string, color:stri
             }}
         >
             <MenuItem ><a href={`tel:+${shortPhone}`} target="_blank" rel="noopener noreferrer" style={{color: '#7BB32E', fontSize:size}}>Телефон <PhoneIcon fontSize='inherit' /></a></MenuItem>
-            <MenuItem ><a href={`viber://chat?number=+${shortPhone}`} target="_blank" rel="noopener noreferrer" style={{color: '#7f40bd', fontSize:size}}>Viber <img src='img/viber.svg' alt='VB' style={{width: size, height: size}} /></a></MenuItem>
+            <MenuItem ><a href={`viber://chat?number=+${shortPhone}`} target="_blank" rel="noopener noreferrer" style={{color: '#7f40bd', fontSize:size}}>Viber <img src='img/svg/viber.svg' alt='VB' style={{width: size, height: size}} /></a></MenuItem>
             <MenuItem ><a href={`https://wa.me/${shortPhone}`} target="_blank" rel="noopener noreferrer" style={{color: '#25D366', fontSize:size}}>WhatsApp <WhatsAppIcon fontSize='inherit' /></a></MenuItem>
-            <MenuItem ><a href={`https://t.me/+${shortPhone}`} target="_blank" rel="noopener noreferrer" style={{color: '#000000', fontSize:size}}>Telegram <img src='img/telegram.svg' alt='TG' style={{width: size, height: size}} /></a></MenuItem>
         </Menu>
 
     </>

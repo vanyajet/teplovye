@@ -16,7 +16,7 @@ const ProductGallery:FC<{ items:IProductData[], setIndex:React.Dispatch<React.Se
         setTimeout(() => {
           setIndex(item)
           setSelected(true);
-        }, 400);
+        }, 100);
       }
       
 
@@ -28,7 +28,7 @@ const ProductGallery:FC<{ items:IProductData[], setIndex:React.Dispatch<React.Se
       {items.map((item:IProductData) => (
         <motion.li
           layoutId={item.id}
-          style={{ display: `${index=== item.id && selected ? 'none' : 'flex'}`, flex: `${selected ? '1 1 200px' : '1 1 300px'}` }}
+          style={{ display: `${index=== item.id && selected ? 'none' : 'flex'}`, flex: `${selected ? '1 1 225px' : '1 1 300px'}` }}
           onClick={() => handleClick(item.id)}
           className="gallery-item"
           key={item.id}

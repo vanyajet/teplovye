@@ -10,7 +10,6 @@ import InfoIcon from '@mui/icons-material/Info';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import YardIcon from '@mui/icons-material/Yard';
 import { Link } from 'react-router-dom';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 
 const StyledMenu = styled((props: MenuProps) => (
@@ -120,7 +119,7 @@ const MobileMenu:React.FC = () => {
         to='/cart'
         style={{marginRight: '1rem', marginTop: '1rem', marginBottom: '1rem', fontWeight: 'bold', backgroundColor: '#7BB32E', color: '#000'}}
       >
-        <ShoppingCartCheckoutIcon />
+        Сделать Заказ
       </Button>
     </div>
   );

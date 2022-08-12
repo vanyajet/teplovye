@@ -62,12 +62,12 @@ const Contacts:FC = () => {
           <div className='contacts-people-box'>
             <div className='contacts-people-info'>
               <Typography variant='h4' >
-                Директор Тимофей
+                Диспетчерская
               </Typography>
               <Typography variant='body1' >
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequatur molestias accusamus delectus optio officia eum deserunt aliquid quibusdam minus.
               </Typography>
-              <CallButton shortPhone='79053001016' title='+7(905) 300-10-16' sizing='small' color='#7BB32E' />
+              <CallButton shortPhone='79639100112' title='+7(963) 910-01-12' sizing='small' color='#7BB32E' />
             </div>
             <Avatar 
               alt="Директор Тимофей"

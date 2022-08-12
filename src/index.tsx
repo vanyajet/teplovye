@@ -58,8 +58,7 @@ const theme = createTheme({
       },
     },
     fontFamily: [
-      'Balsamiq Sans',
-      'cursive',
+      'Axiforma',
       'Nunito',
       'sans-serif'
     ].join(','),

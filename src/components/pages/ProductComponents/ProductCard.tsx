@@ -5,12 +5,13 @@ import ImageGallery, { swipePower } from "../../animations/ImageGallery";
 import CloseIcon from '@mui/icons-material/Close';
 import { IProductData } from "../../../data/productData";
 import AdditionalInfoButton from "../../animations/AdditionalInfoButton";
+import CustomSelect from "./ProductCardComponents/CustomSelect";
 
 const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction<string|null>>, product?: IProductData}> = ({ index, setIndex, product }) => {
   
     const close:()=>void = () => setIndex(null);
 
-    const { id, title, subTitle, price, img, contentText, category, bju } = product!
+    const { title, subTitle, price, img, contentText, category, bju, measure } = product!
 
     const swipeConfidenceThreshold = 40000;
   
@@ -49,7 +50,7 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
               <h4 className="card-content-category">{category}</h4>
               <h2 className="card-content-title">{title} {subTitle}
               <AdditionalInfoButton
-                title='БЖУ' 
+                title='Пищевая ценность' 
                 menuItems={ [`Белки: ${bju.belki} г`,
                 `Жиры: ${bju.jiri} г`,
                 `Углеводы: ${bju.uglevodi} г`,
@@ -60,6 +61,7 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
                 {contentText}
               </p>
               <div className="card-content-price">
+                <CustomSelect measure={measure} prices={price} />
                 <TextField
                   label={`от ${price[0].mass} кг`}
                   defaultValue={`${price[0].price} руб/кг`}
@@ -69,24 +71,7 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
                   color='primary'
                   className='input_price'
                 />
-                <TextField
-                  label={`от ${price[1].mass} кг`}
-                  defaultValue={`${price[1].price} руб/кг`}
-                  InputProps={{
-                    readOnly: true,
-                  }}
-                  color='primary'
-                  className='input_price'
-                />
-                <TextField
-                  label={`от ${price[2].mass} кг`}
-                  defaultValue={`${price[2].price} руб/кг`}
-                  InputProps={{
-                    readOnly: true,
-                  }}
-                  color='primary'
-                  className='input_price'
-                />
+                
               </div>
             </Box>
         </motion.div>

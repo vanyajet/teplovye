@@ -41,6 +41,9 @@ const Footer:FC = () => {
                 <WhatsAppIcon />
               <h5 className='footer-media-text'>+7(905) 300-10-16</h5>
             </Fab>
+            <Fab color="secondary" href='tel:+79370608621' target="_blank" rel="noopener noreferrer" variant='extended' className='footer-media'>
+              <h5 className='footer-media-text'>Звонок директору</h5>
+            </Fab>
               </div>
             </Grid> 
             

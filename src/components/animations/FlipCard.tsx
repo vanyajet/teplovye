@@ -1,11 +1,19 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { useSpring, a } from '@react-spring/web'
 
-const FlipCard:FC<{ back: string, front: string, shadow?: string, initial?: string }> = ({ back, front, shadow, initial }) => {
+const FlipCard:FC<{ back: string, front: string, shadow?: string, initial?: string, flipTime?:number }> = ({ back, front, shadow, initial, flipTime }) => {
 
-  const [flipped, setFlipped] = useState(initial === 'flipped' ? false : true)
+  const [flipped, setFlipped] = useState(true)
 
   const boxShadow = shadow === 'dark' ? '0px 0px 32px 16px rgba(34, 60, 80, 0.3)' : '0px 0px 32px 16px rgba(240, 240, 240, 0.3);'
+
+
+  useEffect(() => {
+    if (flipTime){
+    setTimeout(() => setFlipped(false), flipTime);
+    } 
+    
+  }, [])
   
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
