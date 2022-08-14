@@ -11,26 +11,23 @@ const CustomSelect:React.FC<{ measure:string, prices:Array<{mass: number, price:
 
   const [cost, setCost] = React.useState(prices[0].price);
 
-  const priceLabel = () => {
-    if (JSON.parse(amount) > prices[2].mass) {
-      return setCost(prices[2].price)
-    } if (JSON.parse(amount) > prices[1].mass) {
-      return setCost(prices[1].price)
-    } else {
-      return setCost(prices[0].price)
-    }
-  }
-
   const handleChange = (event: SelectChangeEvent) => {
-    setAmount(event.target.value);
-    // priceLabel();
+    if (JSON.parse(event.target.value) > prices[2].mass) {
+      setCost(prices[2].price)
+    } else if (JSON.parse(event.target.value) > prices[1].mass) {
+      setCost(prices[1].price)
+    } else {
+      setCost(prices[0].price)
+    }
+    setAmount(event.target.value)
   };
+
   
 
   return (
     <div>
       <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-helper-label">{priceLabel} руб/{measure}</InputLabel>
+        <InputLabel id="demo-simple-select-helper-label">{cost} руб/{measure}</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
@@ -43,7 +40,7 @@ const CustomSelect:React.FC<{ measure:string, prices:Array<{mass: number, price:
           <MenuItem value={30}>30 {measure}</MenuItem>
           <MenuItem value={50}>50 {measure}</MenuItem>
           <MenuItem value={140}>140 {measure}</MenuItem>
-          <MenuItem value={160}>160 {measure}</MenuItem>
+          <MenuItem value={180}>180 {measure}</MenuItem>
         </Select>
         <FormHelperText>Больше количество - меньше цена</FormHelperText>
       </FormControl>
