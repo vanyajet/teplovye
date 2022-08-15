@@ -14,7 +14,7 @@ const Footer:FC = () => {
         <Container>
           <Grid container spacing={4}>
   
-            <Grid sm={12} md={12} lg={4} >
+            <Grid item sm={12} md={12} lg={4} >
                 <h3 className='footer-box-title'>О нас</h3>
                 <div className="footer-box">
                 <p>Наша цель - кормить людей экологически чистыми продуктами круглый год.</p>
@@ -26,7 +26,7 @@ const Footer:FC = () => {
               </div>
             </Grid>
             
-            <Grid sm={12} md={12} lg={4}  >
+            <Grid item sm={12} md={12} lg={4} >
               <h3 className='footer-box-title'>Контакты</h3>
               <div className='footer-media-container'>
             <Fab color="secondary" href='https://www.instagram.com/smolly.ru/' target="_blank" rel="noopener noreferrer" variant='extended' className='footer-media'>
@@ -47,7 +47,7 @@ const Footer:FC = () => {
               </div>
             </Grid> 
             
-            <Grid sm={12} md={12} lg={4} >
+            <Grid item sm={12} md={12} lg={4} >
                 <h3 className='footer-box-title'>Адреса наших магазинов</h3>
                 <div className="footer-box">
                     <p><LocationOnIcon /> Ставропольская 200</p>

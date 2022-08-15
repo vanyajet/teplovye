@@ -1,64 +1,80 @@
 import { Button, ButtonGroup, Grid } from '@mui/material';
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom';
-import { IProductData } from '../../../data/productData';
 import DeleteIcon from '@mui/icons-material/Delete';
+import cart, { ICartItem } from '../../../store/cart';
+import CurrencyRubleIcon from '@mui/icons-material/CurrencyRuble';
+import { observer } from 'mobx-react-lite';
 
-const CartItem:FC<{ product:IProductData}> = ({ product }) => {
+const CartItem:FC<{ item:ICartItem }> = observer(({ item }) => {
+
+    const handleRemove = () => {
+        cart.removeFromCart(item.id)
+    }
+
+    const handleDecrement = () => {
+        cart.decrementAmount(item.id)
+    }
+
+    const handleIncrement = () => {
+        cart.incrementAmount(item.id)
+    }
+
    
     return (
         <React.Fragment>
-        <Grid container columnSpacing={2} justifyContent='center' className='cart-item'>
+        <Grid container className='cart-item'>
             <Grid item sm={10} md={2} lg={2} display='flex' justifyContent='center' alignItems='center'>
-                <Link to='/details'>
+                <Link to='/details' style={{ display: 'flex'}}>
                 <img 
-                    src={product.img[1]} 
+                    src={item.img[0]}
                     className='img-fluid img-cart'
-                    alt={product.title}
-                    // onClick={() => handleDetail(product.id)}
+                    alt={`${item.title}  ${item.subTitle}`}
+                    // onClick={() => handleDetail(item.id)}
                 />
                 </Link>
             </Grid>
             
-            <Grid item sm={10} md={2} lg={2} display='flex' justifyContent='center' alignItems='center' textAlign='center' className='cart-item__title'>
+            <Grid item sm={10} md={2} lg={2} className='cart-item__title'>
                 <Link to='/details' 
-                    // onClick={() => handleDetail(product.id)}
+                    // onClick={() => handleDetail(item.id)}
                 >
-                {product.title}
+                {item.title} {item.subTitle}
                 </Link>
             </Grid>
-            <Grid item sm={10} md={2} lg={2} display='flex' justifyContent='center' alignItems='center' className='cart-item__price'>
+            <Grid item sm={10} md={2} lg={2} className='cart-item__price'>
                 <span className="d-lg-none">Цена: </span>
-                {product.price[1].price}
+                <span className='cart-item-price' >{item.finalPrice} <CurrencyRubleIcon fontSize='small' /> </span>
             </Grid>
-            <Grid item sm={10} md={2} lg={2} display='flex' justifyContent='center' alignItems='center' >
-                <ButtonGroup variant="outlined" aria-label="outlined button group">
-                    <Button>-</Button>
-                    <Button >{product.id}</Button>
-                    <Button>+</Button>
+            <Grid item sm={10} md={2} lg={2} className='cart-item__change-amount' >
+                <ButtonGroup variant="contained" aria-label="contained button group" color='info' >
+                    <Button
+                        style={{ fontWeight: 'bolder' }}
+                        onClick={handleDecrement}
+                    >-</Button>
+                    <Button style={{ fontWeight: 'bolder' }} >{item.amount}</Button>
+                    <Button 
+                        style={{ fontWeight: 'bolder' }}
+                        onClick={handleIncrement}
+                    >+</Button>
                 </ButtonGroup>
             </Grid>
-            <Grid item sm={10} md={2} lg={2} display='flex' justifyContent='center' alignItems='center'>
+            <Grid item sm={10} md={2} lg={2} className='cart-item__remove'>
                 <Button
-                    // onClick={() => {
-                    //     dispatch({
-                    //         type: 'removeFromCart',
-                    //         payload: product.id
-                    //     });
-                    // }} 
+                    onClick={handleRemove}
                 >
-                    <DeleteIcon />
+                    <DeleteIcon color='error' />
                 </Button>
             </Grid>
-            <Grid item sm={10} md={2} lg={2} display='flex' justifyContent='center' alignItems='center'>
-                <strong className="d-lg-none">Стоимость: </strong>
-                <strong>{product.price[1].price}</strong>
+            <Grid item sm={10} md={2} lg={2} className='cart-item__cost'>
+                <span className="d-lg-none">Стоимость: </span>
+                <span className='cart-item-cost' >{item.cost} <CurrencyRubleIcon fontSize='small' /></span>
             </Grid>
         </Grid>
         </React.Fragment>
     )
 
 
-}
+})
 
 export default CartItem

@@ -42,37 +42,39 @@ const Contacts:FC = () => {
         </div>
 
         <Typography variant='h3' style={{ color: '#fff', textAlign: 'center'}}>Контактные лица</Typography>
+
         <div className='contacts-people'>
           <div className='contacts-people-box'>
             <div className='contacts-people-info'>
-              <Typography variant='h4' >
+              <Typography variant='h5' >
                 Менеджер Дмитрий
               </Typography>
               <Typography variant='body1' >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequatur molestias accusamus delectus optio officia eum deserunt aliquid quibusdam minus.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               </Typography>
               <CallButton shortPhone='79053001016' title='+7(905) 300-10-16' sizing='small' color='#7BB32E' />
             </div>
             <Avatar 
               alt="Директор Тимофей"
               src="img/Timofey_avatar.jpg"
-              sx={{ width: '8rem', height: '8rem', marginLeft: '1rem' }}
+              sx={{ width: '7rem', height: '7rem', marginLeft: '1rem' }}
             />
           </div>
+
           <div className='contacts-people-box'>
             <div className='contacts-people-info'>
-              <Typography variant='h4' >
+              <Typography variant='h5' >
                 Диспетчерская
               </Typography>
               <Typography variant='body1' >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequatur molestias accusamus delectus optio officia eum deserunt aliquid quibusdam minus.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               </Typography>
               <CallButton shortPhone='79639100112' title='+7(963) 910-01-12' sizing='small' color='#7BB32E' />
             </div>
             <Avatar 
-              alt="Директор Тимофей"
+              alt="Диспетчерская"
               src="img/Timofey_avatar.jpg"
-              sx={{ width: '8rem', height: '8rem', marginLeft: '1rem' }}
+              sx={{ width: '7rem', height: '7rem', marginLeft: '1rem' }}
             />
           </div>
         </div>

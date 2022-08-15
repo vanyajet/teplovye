@@ -1,22 +1,25 @@
 import { Typography } from '@mui/material'
+import { observer } from 'mobx-react-lite'
 import React, { FC } from 'react'
+import cart from '../../store/cart'
 import Footer from '../navigation/Footer'
 import CartColumns from './cartComponents/CartColumns'
 import CartList from './cartComponents/CartList'
 import CartTotal from './cartComponents/CartTotal'
 
-const Cart:FC = () => {
+const Cart:FC = observer(() => {
   
     return (
 
-            
-            <>
-            {/* {state.every(product => product.inCart !== true) ?
-                <Typography variant='h2'>Сейчас Ваша Корзина Пуста</Typography>
-            : */}
-                <Typography variant='h2' align='center' mt={10}>Ваша Корзина</Typography>
+           <>
+                {cart.cartList.length === 0 ? 
+                <Typography variant='h3' align='center' mt={10}>Ваш Заказ Пуст</Typography>
+                :
+                <>
+                <Typography variant='h3' align='center' mt={10}>Ваш Заказ</Typography>
                 <CartColumns />
                 <CartList 
+                    cartList={cart.cartList}
                     // state={state}
                     // dispatch={dispatch}
                 />
@@ -25,10 +28,10 @@ const Cart:FC = () => {
                     // dispatch={dispatch}
                 />
                 <Footer />
-
+                </>}
             </>
     )
 
-}
+})
 
 export default Cart

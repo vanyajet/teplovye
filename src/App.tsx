@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import Default from './components/pages/Default';
 import Loader from './components/Loader';
 import Navbar from './components/navigation/Navbar';
-import Home from './components/pages/About';
-import Production from './components/pages/Production';
-import Products from './components/pages/Products';
-import Contacts from './components/pages/Contacts';
-import Cart from './components/pages/Cart';
+
+const About = React.lazy(() => import('./components/pages/About'))
+const Products = React.lazy(() => import('./components/pages/Products'))
+const Production = React.lazy(() => import('./components/pages/Production'))
+const Cart = React.lazy(() => import('./components/pages/Cart'))
+const Default = React.lazy(() => import('./components/pages/Default'))
+const Contacts = React.lazy(() => import('./components/pages/Contacts'))
        
 
 const App:FC = () => {
@@ -17,7 +18,7 @@ const App:FC = () => {
       <Navbar />
       <Switch>
         <Route exact path='/'> <Products /> </Route>
-        <Route path='/about'> <React.Suspense fallback={<Loader/>}> <Home /> </React.Suspense> </Route>
+        <Route path='/about'> <React.Suspense fallback={<Loader/>}> <About /> </React.Suspense> </Route>
         <Route path='/production'> <React.Suspense fallback={<Loader/>}> <Production /> </React.Suspense> </Route>
         <Route path='/contacts'> <React.Suspense fallback={<Loader/>}> <Contacts /> </React.Suspense> </Route>
         <Route path='/cart'> <React.Suspense fallback={<Loader/>}> <Cart/> </React.Suspense> </Route>

@@ -43,7 +43,9 @@ const theme = createTheme({
       main: '#e50714',
       light: '#FC2405',
     },
-
+    info: {
+      main: '#ffffff'
+    }
   },
   typography: {
     body1: {

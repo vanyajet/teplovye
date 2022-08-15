@@ -10,6 +10,17 @@ import InfoIcon from '@mui/icons-material/Info';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import YardIcon from '@mui/icons-material/Yard';
 import { Link } from 'react-router-dom';
+import { Badge, BadgeProps } from '@mui/material';
+import cart from '../../store/cart';
+import { observer } from 'mobx-react-lite';
+
+const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    position: 'absolute',
+    top: 15,
+    right: 19,
+  },
+}));
 
 
 const StyledMenu = styled((props: MenuProps) => (
@@ -49,7 +60,7 @@ const StyledMenu = styled((props: MenuProps) => (
   },
 }));
 
-const MobileMenu:React.FC = () => {
+const MobileMenu:React.FC = observer(() => {
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -113,16 +124,18 @@ const MobileMenu:React.FC = () => {
         </MenuItem>
 
       </StyledMenu>
-
-      <Button
-        component={Link}
-        to='/cart'
-        style={{marginRight: '1rem', marginTop: '1rem', marginBottom: '1rem', fontWeight: 'bold', backgroundColor: '#7BB32E', color: '#000'}}
-      >
-        Сделать Заказ
-      </Button>
+      <StyledBadge badgeContent={cart.cartList.length} color="error">
+        <Button
+          component={Link}
+          to='/cart'
+          style={{marginRight: '1rem', marginTop: '1rem', marginBottom: '1rem', fontWeight: 'bold', backgroundColor: '#7BB32E', color: '#000'}}
+        >
+          Сделать Заказ
+        </Button>
+      </StyledBadge>
+      
     </div>
   );
-}
+})
 
 export default MobileMenu

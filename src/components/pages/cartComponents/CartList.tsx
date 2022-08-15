@@ -1,15 +1,17 @@
 import { Container } from '@mui/material'
+import { observer } from 'mobx-react-lite'
 import React, { FC } from 'react'
-import { productData } from '../../../data/productData'
+import { ICartItem } from '../../../store/cart'
 import CartItem from './CartItem'
 
-const CartList:FC = () => {
+const CartList:FC<{ cartList:ICartItem[] }> = observer(({ cartList }) => {
   
     return (
-        <Container maxWidth={false} style={{borderBottom:'5px solid #e3071340'}}>
-            {productData.map(product => (
+        <Container maxWidth={false} style={{borderBottom:'5px solid #998f8f7a'}}>
 
-                <CartItem key={product.id} product={product}/>
+            {cartList.map((item:ICartItem) => (
+
+                <CartItem key={item.id} item={item}/>
 
             ))} 
             
@@ -17,6 +19,6 @@ const CartList:FC = () => {
     )
 
 
-}
+})
 
 export default CartList

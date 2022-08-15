@@ -11,7 +11,7 @@ const url = (name: string, wrap = false) =>
 
 
 
-const Home:FC = () => {
+const About:FC = () => {
 
     return (
 
@@ -151,11 +151,10 @@ const Home:FC = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={window.innerWidth > 600 ? 0.5 : 0.25} speed={0.2}>
-          <div style={{ marginLeft: `${window.innerWidth > 600 ? '3%' : '0%'}`, marginTop: `${window.innerWidth > 768 ? '0' : '3rem'}`, fontSize: `${window.innerWidth > 430 ? '1rem' : '0.85rem'}` }}>           
+          <div style={{ display: `${window.innerWidth > 600 ? 'block' : 'none'}`, marginLeft: `${window.innerWidth > 600 ? '3%' : '0%'}`, marginTop: `${window.innerWidth > 768 ? '0' : '3rem'}`, fontSize: `${window.innerWidth > 430 ? '1rem' : '0.85rem'}` }}>           
             <FlipCard
               back='ООО «Тепличный» — лидер в Поволжье по круглогодичному выращиванию овощей. Общая площадь теплиц — 16 га, более 200 сотрудников и за год здесь собирают более 6 млн кг овощей. Основные направления — производство огурцов и томатов. Кроме того, здесь выращивают грибы, редис, салат, зеленые культуры, производится мед различных сортов.'
               front='img/products2.jpg'
-              initial='flipped'
               shadow='bright'/>
           </div>
         </ParallaxLayer>
@@ -165,7 +164,7 @@ const Home:FC = () => {
           <FlipCard
             back='Наша продукция - самый высокий стандарт по соотношению цена - качество. Каждый плод выращеный в теплицах чистый и экологичный, а за счет валового сбора удаётся сдерживать цены на продукцию, поэтому она пользуется спросом.'
             front='img/tomato_farm.jpg'
-
+            flipTime={2500}
             shadow='bright'/>
           </div>
         </ParallaxLayer>
@@ -181,7 +180,7 @@ const Home:FC = () => {
             <FlipCard
               back='Свяжитесь с нашим менеджером и оставьте заявку, мы обработаем Ваш заказ и доставим необходимые объемы продукции в указанные сроки'
               front='img/mushroom.jpg'
-              initial='flipped'
+              flipTime={5500}
               shadow='bright'/>
           </div>
         </ParallaxLayer>
@@ -197,4 +196,4 @@ const Home:FC = () => {
 }
 
 
-export default Home
+export default About

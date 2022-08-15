@@ -1,44 +1,45 @@
 import { Button, Container, Typography } from '@mui/material'
-import React, { FC } from 'react'
-import { Link } from 'react-router-dom'
+import React, { FC, } from 'react'
+import CurrencyRubleIcon from '@mui/icons-material/CurrencyRuble';
+import { observer } from 'mobx-react-lite';
+import cart from '../../../store/cart';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
-const CartTotal:FC = () => {
+const CartTotal:FC = observer(() => {
+
+    const handleClear = () => {
+        cart.clearCart()
+    }
   
     return (
         <React.Fragment>
             <Container>
                 <div className="cart-total">
-                    <Link to='/'>
                         <Button 
                             variant="contained" 
                             color="error"
-                            // onClick={() => {
-                            //     dispatch({
-                            //         type: 'clearCart'
-                            //     })
-                            // }}
+                            onClick={handleClear}
                         >
                             Очистить корзину
                         </Button>
-                    </Link>
-                    <br/>
                     <Button 
                             variant="contained" 
                             color="success"
                             size='large'
                             style={{padding: '1rem'}}
+                            endIcon={<ShoppingCartCheckoutIcon style={{ marginBottom: '4px'}} />}
                             // onClick={toggle}
                         >
                             Оформить заказ
                     </Button>
-                    <Typography variant='h5' align='center'>
-                            Итого: <strong>cartTotal руб</strong>
+                    <Typography variant='h5' align='center' display='flex' >
+                        Итого: {cart.cartTotal} <CurrencyRubleIcon />
                     </Typography>
                 </div>
             </Container>
         </React.Fragment>
     )
 
-}
+})
 
 export default CartTotal

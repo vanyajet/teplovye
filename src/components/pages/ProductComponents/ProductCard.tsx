@@ -1,19 +1,19 @@
 import React, { FC } from "react";
 import { motion } from "framer-motion";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import ImageGallery, { swipePower } from "../../animations/ImageGallery";
 import CloseIcon from '@mui/icons-material/Close';
 import { IProductData } from "../../../data/productData";
 import AdditionalInfoButton from "../../animations/AdditionalInfoButton";
-import CustomSelect from "./ProductCardComponents/CustomSelect";
+import ProductTotal from "./ProductCardComponents/ProductTotal";
 
 const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction<string|null>>, product?: IProductData}> = ({ index, setIndex, product }) => {
   
     const close:()=>void = () => setIndex(null);
 
-    const { title, subTitle, price, img, contentText, category, bju, measure } = product!
+    const { title, subTitle, img, contentText, category, bju } = product!
 
-    const swipeConfidenceThreshold = 40000;
+    const swipeConfidenceThreshold = 400000;
   
     return (
       <div className="product-card-container" >
@@ -30,7 +30,7 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
           dragPropagation={true}
           onClick={e => e.stopPropagation()}
           style={{ backgroundColor: '#a9a9a9'}}
-          dragConstraints={{ bottom: 200, top: -220 }}
+          dragConstraints={{ bottom: 200, top: -320 }}
           dragSnapToOrigin={false}
         >
             {window.innerWidth > 768 ? null :
@@ -61,16 +61,8 @@ const ProductCard:FC<{index:string, setIndex:React.Dispatch<React.SetStateAction
                 {contentText}
               </p>
               <div className="card-content-price">
-                <CustomSelect measure={measure} prices={price} />
-                <TextField
-                  label={`от ${price[0].mass} кг`}
-                  defaultValue={`${price[0].price} руб/кг`}
-                  InputProps={{
-                    readOnly: true,
-                  }}
-                  color='primary'
-                  className='input_price'
-                />
+
+                <ProductTotal product={product!} />
                 
               </div>
             </Box>

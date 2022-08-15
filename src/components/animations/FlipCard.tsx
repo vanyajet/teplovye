@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useSpring, a } from '@react-spring/web'
 
-const FlipCard:FC<{ back: string, front: string, shadow?: string, initial?: string, flipTime?:number }> = ({ back, front, shadow, initial, flipTime }) => {
+const FlipCard:FC<{ back: string, front: string, shadow?: string, flipTime?:number }> = ({ back, front, shadow, flipTime }) => {
 
   const [flipped, setFlipped] = useState(true)
 

@@ -199,7 +199,9 @@ a {
 
 .lds-heart {
   display: inline-block;
-  position: relative;
+  position: absolute;
+  top: 20%;
+  left: 50%;
   width: 80px;
   height: 80px;
   transform: rotate(45deg);
@@ -209,8 +211,8 @@ a {
   top: 32px;
   left: 32px;
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 96px;
+  height: 96px;
   background: #fff;
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -219,16 +221,16 @@ a {
   content: " ";
   position: absolute;
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 96px;
+  height: 96px;
   background: #fff;
 }
 .lds-heart div:before {
-  left: -24px;
+  left: -72px;
   border-radius: 50% 0 0 50%;
 }
 .lds-heart div:after {
-  top: -24px;
+  top: -72px;
   border-radius: 50% 50% 0 0;
 }
 @keyframes lds-heart {
@@ -340,16 +342,16 @@ a {
 .mobile-logo img {
   display: none;
   height: 40px;
-  margin-bottom: 10px;
   margin-left: 10px;
 }
-
+.desktop-logo {
+  display: flex;
+}
 .desktop-logo img {
   height: 40px;
-  margin-bottom: 10px;
   margin-left: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-logo  {
     display: block;
   }
@@ -389,6 +391,8 @@ a {
 @media (max-width: 500px) {
   .card-title {
     font-size: 26px;
+    margin-right: 8px;
+    line-height: 1.25;
   }
 }
 .manager {
@@ -601,9 +605,6 @@ a {
   margin-right: 1rem !important;
   font-size: 1.2rem !important;
 }
-.footer-media:hover {
-  background-color: var(--mainGreen);
-}
 .footer-box {
   background: linear-gradient(13deg, var(--mainGreen) 25%, var(--darkGreen) 60%);
   background: -moz-linear-gradient(13deg, var(--mainGreen) 25%,var(--darkGreen) 60%);
@@ -684,15 +685,30 @@ a {
   }
 }
 .cart-item {
-  border-top: 5px solid #e3071340;
+  display: flex !important;
+  justify-content:center !important;
+  align-content:center !important;
+  border-top: 5px solid #998f8f7a;
   padding: 1rem;
-  margin-bottom: 1rem;
   flex-wrap: nowrap !important;
+}
+.cart-item div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  align-content: center !important;
+}
+.cart-item__title {
+  text-align: center !important;
+}
+.cart-item__cost {
+  flex-wrap: wrap !important;
 }
 @media (max-width: 768px) {
   .cart-item {
     flex-wrap: wrap !important;
     flex-direction: column !important;
+    margin-left: 0px !important;
   }
 }
 @media (max-width: 768px) {
@@ -702,11 +718,34 @@ a {
   }
   .cart-item__price {
     margin-bottom: .3rem !important;
+    align-items: baseline !important;
+  }
+}
+@media (max-width: 900px) {
+  .cart-item__cost {
+    align-items: baseline !important;
   }
 }
 .cart-total {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.product-total {
+  display: flex;
+  align-items: flex-start;
+}
+#select-helper-label {
+  display: flex;
+  align-items: flex-start;
+}
+.cart-item-cost, .cart-item-price {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .cart-item-cost, .cart-item-price {
+    margin-left: 4px;
+  }
 }

@@ -23,8 +23,8 @@ const AdditionalInfoButton:FC<{ title:string, menuItems:string[] }> = ({ title, 
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
             variant="text"
-            sx={ { mx:2 } }
-            style={{fontWeight: 'bold'}}
+            sx={{ mx:window.innerWidth > 500 ? 2 : 0 }}
+            style={{fontWeight: 'bold', alignItems: 'start'}}
             endIcon={<ArrowDropDown /> }
         >
             {title}
@@ -39,7 +39,7 @@ const AdditionalInfoButton:FC<{ title:string, menuItems:string[] }> = ({ title, 
             }}
         >
             {menuItems.map(item => (
-                <MenuItem disabled style={{color:'#000', opacity: '0.9'}} >{item} </MenuItem>
+                <MenuItem disabled key={item} style={{color:'#000', opacity: '0.9'}} >{item} </MenuItem>
             ) )}
             
             
