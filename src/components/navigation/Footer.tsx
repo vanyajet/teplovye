@@ -4,6 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Grid, Fab, Container } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Link } from 'react-router-dom';
 
 
 const Footer:FC = () => {
@@ -49,14 +50,14 @@ const Footer:FC = () => {
             
             <Grid item sm={12} md={12} lg={4} >
                 <h3 className='footer-box-title'>Адреса наших магазинов</h3>
-                <div className="footer-box">
-                    <p><LocationOnIcon /> Ставропольская 200</p>
-                    <p><LocationOnIcon /> Метро Московская</p>
-                    <p><LocationOnIcon /> Хлеб Завод №5 - Победа 166А</p>
-                    <p><LocationOnIcon /> Метро Советская Павильон № 1</p>
-                    <p><LocationOnIcon /> Дом молодежи - ул. Аэродромная 16А</p>
-                    <p><LocationOnIcon /> Метро Победа Павильон № 56</p>
-                    <p><LocationOnIcon /> Метро Безымянка Павильон № 16</p>
+                <div className="footer-box" style={{display: 'flex', flexDirection: 'column',}}>
+                    <Link to={{ pathname:'/contacts', hash:'#shops'}}><LocationOnIcon /> Ставропольская 200</Link>
+                    <Link to={{ pathname:'/contacts', hash:'#shops'}}><LocationOnIcon /> Метро Московская</Link>
+                    <Link to={{ pathname:'/contacts', hash:'#shops'}}><LocationOnIcon /> Хлеб Завод №5 - Победа 166А</Link>
+                    <Link to={{ pathname:'/contacts', hash:'#shops'}}><LocationOnIcon /> Метро Советская Павильон № 1</Link>
+                    <Link to={{ pathname:'/contacts', hash:'#shops'}}><LocationOnIcon /> Дом молодежи - ул. Аэродромная 16А</Link>
+                    <Link to={{ pathname:'/contacts', hash:'#shops'}}><LocationOnIcon /> Метро Победа Павильон № 56</Link>
+                    <Link to={{ pathname:'/contacts', hash:'#shops'}}><LocationOnIcon /> Метро Безымянка Павильон № 16</Link>
 
                 </div>
             </Grid>

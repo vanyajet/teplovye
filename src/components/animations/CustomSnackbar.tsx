@@ -3,8 +3,16 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { Alert } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const CustomSnackbar:React.FC<{ open?:boolean, setOpen:React.Dispatch<React.SetStateAction<boolean>> }> = ({open, setOpen}) => {
+const CustomSnackbar:React.FC<{ 
+  open?:boolean,
+  setOpen:React.Dispatch<React.SetStateAction<boolean>>,
+  vertical:"top" | "bottom",
+  horizontal:"left" | "center" | "right",
+  insideText:string,
+  link?:string
+  }> = ({open, setOpen, vertical, horizontal, insideText, link}) => {
 
   const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
@@ -28,18 +36,35 @@ const CustomSnackbar:React.FC<{ open?:boolean, setOpen:React.Dispatch<React.SetS
 
   return (
     <div>
+      {link ? 
+        <Link to={link}>
+          <Snackbar
+          open={open}
+          autoHideDuration={2500}
+          onClose={handleClose}
+          message={insideText}
+          action={action}
+          anchorOrigin={{ vertical:vertical, horizontal:horizontal }}
+          >
+            <Alert onClose={handleClose} severity="success" sx={{ fontSize:'1.5rem', width: '100%' }}>
+              {insideText}
+            </Alert>
+          </Snackbar>
+        </Link>
+      :
       <Snackbar
         open={open}
         autoHideDuration={2500}
         onClose={handleClose}
-        message="Товар добавлен в заказ"
+        message={insideText}
         action={action}
-        anchorOrigin={{ vertical:'bottom', horizontal:'right' }}
+        anchorOrigin={{ vertical:vertical, horizontal:horizontal }}
       >
         <Alert onClose={handleClose} severity="success" sx={{ fontSize:'1.5rem', width: '100%' }}>
-          Товар добавлен в заказ
+          {insideText}
         </Alert>
       </Snackbar>
+      }
     </div>
   );
 }

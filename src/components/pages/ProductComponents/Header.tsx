@@ -18,7 +18,7 @@ export const Header = () => {
       </div>
       <Avatar 
         alt="Директор Тимофей"
-        src="img/Timofey_avatar.jpg"
+        src="img/Dima_avatar.jpg"
         sx={{ width: '4rem', height: '4rem', marginLeft: '1rem' }}
       />
     </div>

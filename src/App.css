@@ -548,9 +548,6 @@ a {
 .card-content-price {
   width: 100%;
 }
-.card-content-bju {
-
-}
 .production-header {
   display: flex;
   justify-content: center;
@@ -736,10 +733,16 @@ a {
 .product-total {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 #select-helper-label {
   display: flex;
   align-items: flex-start;
+  font-size: 1.4rem;
+}
+#select-helper-label > svg {
+  font-size: 1.4rem;
+  padding-top: 2px;
 }
 .cart-item-cost, .cart-item-price {
   display: flex;

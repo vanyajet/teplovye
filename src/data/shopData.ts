@@ -1,5 +1,6 @@
 export interface IShopData {
     id: string;
+    urlTitle:string;
     title:string;
     contentText:string;
     img:string[];
@@ -9,6 +10,7 @@ export interface IShopData {
 export const shopData: IShopData[] = [
 {
     id: '1',
+    urlTitle:'kirova',
     title:'Ставропольская 200',
     contentText:'Магазин расположен на пересечении улиц Ставропольской - Кирова',
     img:[
@@ -23,6 +25,7 @@ export const shopData: IShopData[] = [
 },
 {
     id: '2',
+    urlTitle:'moskva',
     title:'Метро Московская',
     contentText:'Магазин расположен на пересечении улиц Ставропольской - Кирова',
     img:[
@@ -34,6 +37,7 @@ export const shopData: IShopData[] = [
 },
 {
     id: '3',
+    urlTitle:'hz5',
     title:'Хлеб Завод №5 - Победа 166А',
     contentText:'Магазин расположен на пересечении улиц Ставропольской - Кирова',
     img:[
@@ -48,6 +52,7 @@ export const shopData: IShopData[] = [
 },
 {
     id: '4',
+    urlTitle:'sovet',
     title:'Метро Советская Павильон № 1',
     contentText:'Магазин расположен на пересечении улиц Ставропольской - Кирова',
     img:[
@@ -62,6 +67,7 @@ export const shopData: IShopData[] = [
 },
 {
     id: '5',
+    urlTitle:'dom-m',
     title:'Дом молодежи - ул. Аэродромная 16А',
     contentText:'Магазин расположен на пересечении улиц Ставропольской - Кирова',
     img:[
@@ -76,6 +82,7 @@ export const shopData: IShopData[] = [
 },
 {
     id: '6',
+    urlTitle:'pobeda',
     title:'Метро Победа Павильон № 56',
     contentText:'Магазин расположен на пересечении улиц Ставропольской - Кирова',
     img:[
@@ -90,6 +97,7 @@ export const shopData: IShopData[] = [
 },
 {
     id: '7',
+    urlTitle:'beza',
     title:'Метро Безымянка Павильон № 16',
     contentText:'Магазин расположен на пересечении улиц Ставропольской - Кирова',
     img:[

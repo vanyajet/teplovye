@@ -29,11 +29,6 @@ const About:FC = () => {
           
         </ParallaxLayer>
 
-        {/* <ParallaxLayer offset={0.2} speed={-0.1} style={{ opacity: 0.7 }} >
-          <img src='img/up-down_arrow.svg' style={{ width: '10%', marginLeft: '3%' }} />
-        </ParallaxLayer> */}
-
-        
         
         <ParallaxLayer offset={0.8} speed={-0.1} style={{ opacity: 0.4 }}> 
           <img src='img/svg/salad.svg' alt='Салат Тепловье' style={{ display: 'block', width: '25%', marginLeft: '70%' }} />
@@ -96,7 +91,9 @@ const About:FC = () => {
 
         <ParallaxLayer offset={0.99} speed={0.2}>
           <div className='grey_text_left'>
-            <Typography variant={`${window.innerWidth > 1024 ? 'h3' : 'h5'}`}>Мы готовы поставлять свежие овощи круглый год, а также производить необходимые объемы продукции индивидуально для Вас (вашей компании?)</Typography>
+            <Typography variant={`${window.innerWidth > 1024 ? 'h3' : 'h5'}`}>
+              Мы бесперебойно поставляем свежие овощи и микрозелень круглый год, а также готовы рассмотреть индивидуальные условия на любой вид выращиваемой продукции
+            </Typography>
           </div>
         </ParallaxLayer>
 
@@ -150,19 +147,10 @@ const About:FC = () => {
           <img src='img/svg/restaurantTable.svg' alt='Поставки в Ресторан' style={{ width: '40%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={window.innerWidth > 600 ? 0.5 : 0.25} speed={0.2}>
-          <div style={{ display: `${window.innerWidth > 600 ? 'block' : 'none'}`, marginLeft: `${window.innerWidth > 600 ? '3%' : '0%'}`, marginTop: `${window.innerWidth > 768 ? '0' : '3rem'}`, fontSize: `${window.innerWidth > 430 ? '1rem' : '0.85rem'}` }}>           
-            <FlipCard
-              back='ООО «Тепличный» — лидер в Поволжье по круглогодичному выращиванию овощей. Общая площадь теплиц — 16 га, более 200 сотрудников и за год здесь собирают более 6 млн кг овощей. Основные направления — производство огурцов и томатов. Кроме того, здесь выращивают грибы, редис, салат, зеленые культуры, производится мед различных сортов.'
-              front='img/products2.jpg'
-              shadow='bright'/>
-          </div>
-        </ParallaxLayer>
-
         <ParallaxLayer offset={window.innerWidth > 600 ? 0.7 : 0.62} speed={0.3} >
           <div style={{ marginLeft: `${window.innerWidth > 600 ? '60%' : '0%'}`, marginTop: `${window.innerWidth > 768 ? '0' : '1rem'}`, fontSize: `${window.innerWidth > 430 ? '1rem' : '0.85rem'}` }}>           
           <FlipCard
-            back='Наша продукция - самый высокий стандарт по соотношению цена - качество. Каждый плод выращеный в теплицах чистый и экологичный, а за счет валового сбора удаётся сдерживать цены на продукцию, поэтому она пользуется спросом.'
+            back='Наша продукция обладает самым высоким стандартом качества. При выращивании продукции используется био-защита вместо хим-зищиты от вредителей. Поэтому продукция получается не только вкусная, но и экологически чистая'
             front='img/tomato_farm.jpg'
             flipTime={2500}
             shadow='bright'/>
@@ -171,14 +159,16 @@ const About:FC = () => {
 
         <ParallaxLayer offset={1.7} speed={0.5}>
           <div className='grey_text_right'>
-            <Typography variant={`${window.innerWidth > 1024 ? 'h3' : 'h5'}`}>Нам доверяют такие крупные предприятия как <a href='https://dodopizza.ru/samara/about' target="_blank" rel="noopener noreferrer" style={{ color: '#ff6900', cursor: 'pointer',}}>Додо Пицца</a> и еще кто нибудь</Typography>
+            <Typography variant={`${window.innerWidth > 1024 ? 'h3' : 'h5'}`}>
+                Нам доверяют такие крупные предприятия как <a href='https://dodopizza.ru/samara/about' target="_blank" rel="noopener noreferrer" style={{ color: '#ff6900', cursor: 'pointer',}}>Додо Пицца</a> и еще кто нибудь
+              </Typography>
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.9} speed={0.8}>
           <div style={{ marginLeft: `${window.innerWidth > 600 ? '50%' : '0'}`, marginTop: '25%' }}>           
             <FlipCard
-              back='Свяжитесь с нашим менеджером и оставьте заявку, мы обработаем Ваш заказ и доставим необходимые объемы продукции в указанные сроки'
+              back='Свяжитесь с нашим менеджером и обговорите индивидуальные условия в соответствии с Вашим графиком отгрузки'
               front='img/mushroom.jpg'
               flipTime={5500}
               shadow='bright'/>

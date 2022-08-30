@@ -9,7 +9,7 @@ export interface IProductionItem {
 export const productionData: IProductionItem[] = [
     {
         id: '1',
-        back:'ООО «Тепличный» — крупнейшее тепличное хозяйство в Поволжье, производящее круглый год овощную продукцию.',
+        back:'Мы дистрибутеры ООО «Тепличный» — крупного тепличного хозяйства в Поволжье, производящее круглый год овощную продукцию.',
         front:'img/tomato_farm_close1.jpg',
         shadow:'bright',
         flipTime:2500,

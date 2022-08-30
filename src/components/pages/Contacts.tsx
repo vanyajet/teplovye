@@ -19,12 +19,12 @@ const Contacts:FC = () => {
 
       <Container>
 
-        <div className='contacts-shops'>
+        <div className='contacts-shops' id='shops'>
           <Typography variant='h5' className='contacts-shops-header'>
             Нам доверяют десятки тысяч людей по всему городу, посетите один из наших магазинов и убедитесь в свежести и высоких вкусовых качествах наших продуктов!
             <span role="img" aria-label="Love">❤️</span>
           </Typography>
-          <Grid container spacing={4} style={{display: 'flex', justifyContent: 'space-between', width: 'auto'}}>
+          <Grid container spacing={4}  style={{display: 'flex', justifyContent: 'space-between', width: 'auto'}}>
 
             {shopData.map((item:IShopData) => (
               <Grid item sm={12} md={5.5} lg={5.5} style={{ marginLeft: '0.5rem', marginRight: '0.5rem', marginBottom: '0.5rem', marginTop: '0.5rem'}}>
@@ -56,7 +56,7 @@ const Contacts:FC = () => {
             </div>
             <Avatar 
               alt="Директор Тимофей"
-              src="img/Timofey_avatar.jpg"
+              src="img/Dima_avatar.jpg"
               sx={{ width: '7rem', height: '7rem', marginLeft: '1rem' }}
             />
           </div>
@@ -73,7 +73,7 @@ const Contacts:FC = () => {
             </div>
             <Avatar 
               alt="Диспетчерская"
-              src="img/Timofey_avatar.jpg"
+              src="img/disp.JPG"
               sx={{ width: '7rem', height: '7rem', marginLeft: '1rem' }}
             />
           </div>
